@@ -32,8 +32,7 @@ def negate(x):
 @Operator.new('!', Precedence.UnaryPostfix)
 def factorial(x):
     n = x.evaluate()
-    assert n.is_integer(), "factorial only supports positive integral values"
-    assert n >= 0, "factorial only supports positive integral values"
+    assert n.is_integer() and n >= 0, "factorial only supports positive integral values"
     if n == 0:
         return 1
     for i in range(1, int(n) + 1):
