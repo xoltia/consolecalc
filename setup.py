@@ -4,7 +4,10 @@ setup(
     name = "consolecalc",
     packages = ["consolecalc"],
     entry_points = {
-        "console_scripts": ['consolecalc=consolecalc.runner:main']
+        "console_scripts": [
+            'consolecalc=consolecalc.runner:main',
+            'ccalc=consolecalc.runner:main'
+        ]
     },
     version = '1.0',
     description = "Python command line calculator",
