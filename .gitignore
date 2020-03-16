@@ -125,3 +125,4 @@ dmypy.json
 .pyre/
 
 .vscode/
+consolecalc/import_from
