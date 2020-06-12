@@ -1,7 +1,7 @@
 from .parser import ExpressionParser
 from .expressions import Operator, Precedence, Grouping
 from .defaults import load_defaults
-from .commands import ls, details
+from .commands import ls, details, close
 import importlib.util
 import os
 import sys
@@ -13,7 +13,8 @@ CMD_PREFIX = '?'
 
 COMMANDS = {
     'ls': [ls, 'List vars and/or funcs'],
-    'details': [details, 'Get details about a specific function or variable']
+    'details': [details, 'Get details about a specific function or variable'],
+    'exit': [close, 'Exit']
 }
 
 def handle_input(line, parser):
@@ -90,4 +91,7 @@ def main():
     if args.terminate:
         return
     while True:
-        handle_input(input('> '), parser)
+        try:
+            handle_input(input('> '), parser)
+        except KeyboardInterrupt:
+            close()

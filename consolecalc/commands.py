@@ -1,5 +1,9 @@
 from .parser import ExpressionParser
 from typing import List
+from sys import exit
+
+def close(*_):
+    exit(0)
 
 def ls(parser: ExpressionParser, args: List[str]):
     # TODO: OPERATORS
