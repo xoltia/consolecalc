@@ -1,2 +1,2 @@
-from runner import main
+from .runner import main
 main()
